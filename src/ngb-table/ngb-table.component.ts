@@ -3,8 +3,8 @@ import {Observable} from "rxjs";
 
 @Component({
   selector: 'ngb-table',
-  templateUrl: './ngb-table.component.html',
-  styleUrls: ['./ngb-table.component.css']
+  templateUrl: 'ngb-table.component.html',
+  styleUrls: ['ngb-table.component.css']
 })
 export class NgbTableComponent implements OnInit,OnChanges {
   @Input() tableColumns:Array<any>;

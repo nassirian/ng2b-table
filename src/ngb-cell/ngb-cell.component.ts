@@ -2,7 +2,7 @@ import {Compiler, Component, ElementRef ,OnInit, NgModule, Input, ViewContainerR
 @Component({
   template:'<div #container></div>',
   selector: 'ngb-cell',
-  styleUrls: ['./ngb-cell.component.css']
+  styleUrls: ['ngb-cell.component.css']
 })
 export class NgbCellComponent implements OnInit {
   @ViewChild('container', { read: ViewContainerRef }) container: ViewContainerRef;

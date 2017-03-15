@@ -1,2 +1,2 @@
-export {NgbTableModule} from './src/ngb-table.module';
+export * from './src/ngb-table.module';
 

@@ -3,8 +3,8 @@ import {Component, OnInit, Input, Output, EventEmitter, OnChanges} from '@angula
 
 @Component({
   selector: 'ngb-pagination',
-  templateUrl: './ngb-pagination.component.html',
-  styleUrls: ['./ngb-pagination.component.css']
+  templateUrl: 'ngb-pagination.component.html',
+  styleUrls: ['ngb-pagination.component.css']
 })
 export class NgbPaginationComponent implements OnInit , OnChanges {
   @Input() totalPage;

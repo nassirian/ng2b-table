@@ -1,7 +1,7 @@
 {
   "name": "ng2b-table",
   "description": "Angular2 bootstrap data table with pagination",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "scripts": {
     "build": "ngc -p tsconfig.json",
     "lint": "tslint --type-check --project tsconfig.json src/**/*.ts",
@@ -22,7 +22,7 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/username/repo/issues"
+    "url": "https://github.com/nassirian/ng2b-table/issues"
   },
   "main": "./dist/index.js",
   "dependencies": {
