@@ -3,19 +3,30 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "target": "es5",
+    "rootDir": ".",
     "sourceMap": true,
-    "inlineSources": false,
-    "declaration": false,
-    "experimentalDecorators": true,
+    "inlineSources": true,
+    "declaration": true,
     "emitDecoratorMetadata": true,
-    "stripInternal": true,
+    "experimentalDecorators": true,
+    "mapRoot": "",
+    "noEmitOnError": true,
+    "noImplicitAny": true,
+    "stripInternal": false,
     "skipLibCheck": true,
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "baseUrl": "",
+    "paths": {
+    }
 
   },
   "exclude": [
     "node_modules",
     "dist",
     "**/*.spec.ts"
-  ]
+  ],
+  "angularCompilerOptions": {
+    "genDir": "./dist",
+    "skipTemplateCodegen": true
+  }
 }
