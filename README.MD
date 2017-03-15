@@ -25,7 +25,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 // Import your library
-import { SampleModule } from 'ng2b-table';
+import { NgbTableModule } from 'ng2b-table';
 
 @NgModule({
   declarations: [
@@ -35,7 +35,7 @@ import { SampleModule } from 'ng2b-table';
     BrowserModule,
 
     // Specify your library as an import
-    LibraryModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
@@ -50,7 +50,7 @@ Once your library is imported, you can use its components, directives and pipes 
 <h1>
   {{title}}
 </h1>
-<sampleComponent></sampleComponent>
+<ngb-table></ngb-table>
 ```
 
 ## Development
