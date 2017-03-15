@@ -1,5 +1,6 @@
 {
   "name": "ng2b-table",
+  "description": "Angular2 bootstrap data table with pagination",
   "version": "0.0.2",
   "scripts": {
     "build": "ngc -p tsconfig.json",
