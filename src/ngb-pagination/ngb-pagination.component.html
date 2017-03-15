@@ -1,0 +1,31 @@
+<div>
+  <ul class="pagination">
+    <li class=" pointer-cursor" *ngIf="page > 1">
+      <a aria-label="First Page" (click)="changePage(1)">
+        <span aria-hidden="true">&laquo;</span>
+        <span class="sr-only">First Page</span>
+      </a>
+    </li>
+    <li class="pointer-cursor" (click)="prevPage()">
+      <a aria-label="Previous">
+      <span aria-hidden="true">&lsaquo;</span>
+      <span class="sr-only">Previous</span>
+    </a>
+    </li>
+    <li *ngFor="let item of createRange(startRange,paginationRange);" class="pointer-cursor" (click)="changePage(item)" [ngClass]="{'selectedPage':item==page}"><a>{{item}}</a></li>
+    <li class="pointer-cursor" (click)="nextPage()">
+      <a aria-label="Next">
+        <span aria-hidden="true">&rsaquo;</span>
+        <span class="sr-only">Next</span>
+      </a>
+    </li>
+    <li class="pointer-cursor" *ngIf="page < totalPage">
+      <a aria-label="Last Page" (click)="changePage(totalPage)">
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Last Page</span>
+      </a>
+    </li>
+  </ul>
+</div>
+
+

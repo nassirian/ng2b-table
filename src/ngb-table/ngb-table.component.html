@@ -1,0 +1,36 @@
+<div class="row">
+  <ngb-pagination [totalPage]="_totalPage" [limit]="limit"    (updateFilter)="refreshFilter($event)"></ngb-pagination>
+</div>
+<div class="row">
+
+  <div class="col-sm-12">
+    <table class="table table-bordered">
+      <thead>
+      <tr>
+        <td *ngFor="let header of tableColumns;">
+          <div *ngIf="header.sortable" (click)="_onSort(header.field)">
+            {{header.label}}
+            <span [ngClass]="{'dropup':sortField == header.field && sortOrder == 1}">
+              <span class="caret" [ngClass]="{'disable-caret':sortField != header.field}"></span>
+            </span>
+          </div>
+          <div *ngIf="!header.sortable" >
+            {{header.label}}
+          </div>
+        </td>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let row of tableData;" (click)="onRowClick(row)" >
+
+        <td *ngFor="let cell of tableColumns;" >
+          <div>
+            <ngb-cell [cellTemplate]="cell.cellTemplate" [row]="row" [cell]="cell"></ngb-cell>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
