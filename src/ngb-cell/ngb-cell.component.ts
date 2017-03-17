@@ -31,7 +31,7 @@ export class NgbCellComponent implements OnInit {
     }
       if (!template) template = `<div class="${_class}">{{value}}</div>`;
       @Component({template: template})
-      class TemplateComponent {
+      class TemplateComponent{
 
 
         private cell=_this.cell;
