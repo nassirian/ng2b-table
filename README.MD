@@ -88,6 +88,8 @@ envoke the function you pass
   /**
   dataSet=[{id:1,name:'john',lastname:'doe'}]
   **/
+  
+```typescript  
  export class AppModule { 
  
  private tableColumns=[
@@ -108,6 +110,7 @@ envoke the function you pass
          return '<div (click)='cell.scope.doSomethingElse(row.name)'></div>'
         }
  }
+ ```
 ## Development
 
 To generate all `*.js`, `*.js.map` and `*.d.ts` files:
