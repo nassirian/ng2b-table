@@ -44,6 +44,7 @@ export class AppModule {
 
 private tableColumns=[
     {name:'name', label:'Name', sortable:true, field:'name',onClick:'method on class',scope:this},
+    {name:'balance', label:'Balance', sortable:true, field:'balance',pipe:'currency:en-Us:USD:true'},
 ]
 }
 ```
@@ -51,6 +52,12 @@ private tableColumns=[
 You have access to what you pass on table columns row on the template on cell object
  on columns definition field key is required if you want to create a custom cell without any field send empty string as value for field
 (ex:cell.scope is point to parent class)
+
+# Using Pipe on cell
+
+passing pipe to column definition and simply passing what you pass on angular pipe 
+
+supported pipe : currency , json , date , decimal
 
 Once your library is imported, you can use its components, directives and pipes in your Angular application:
 
