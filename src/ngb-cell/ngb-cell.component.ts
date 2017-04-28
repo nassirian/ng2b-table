@@ -44,7 +44,7 @@ export class NgbCellComponent implements OnInit {
       private pipe=_this.cell.pipe || null;
 
       ngOnInit() {
-        if (this.pipe) {
+        if (this.pipe && (this.value || this.value === 0)) {
           this.value=this.handlePipe(this.pipe,this.value);
         }
       }
