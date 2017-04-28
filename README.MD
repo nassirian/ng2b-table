@@ -57,7 +57,13 @@ You have access to what you pass on table columns row on the template on cell ob
 
 passing pipe to column definition and simply passing what you pass on angular pipe 
 
-supported pipe : currency , json , date , decimal
+supported pipe : currency , json , date , decimal , percentage
+
+Using Percentage :
+pass number of decimal you want after percentage 
+pipe:'percentage:2' 22.22%
+pipe:'percentage:3' 22.225%
+ 
 
 Once your library is imported, you can use its components, directives and pipes in your Angular application:
 

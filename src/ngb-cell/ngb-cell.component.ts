@@ -50,7 +50,7 @@ export class NgbCellComponent implements OnInit {
       }
 
       handlePipe(pipeString,value){
-        var acceptablePipes=['currency','date','json','decimal'];
+        var acceptablePipes=['currency','date','json','decimal','percentage'];
         var pipeArgs=pipeString.split(':');
         var pipeSplit=pipeArgs.splice(0,2);
         var pipeName=pipeSplit[0];
@@ -71,6 +71,8 @@ export class NgbCellComponent implements OnInit {
             case 'decimal':
               pipeObj=new DecimalPipe(pipestr);
               break;
+            case 'percentage':
+              return parseFloat(value).toFixed(pipestr || 2)+'%';
           }
           return pipeObj.transform.apply(this,pipeArgs)
         } else {
