@@ -20,12 +20,13 @@ export class NgbPaginationComponent implements OnInit , OnChanges {
   }
   ngOnChanges(){
     this.page=1;
+    if (!this.maxPage || typeof this.maxPage == 'undefined') this.maxPage=5;
     this.calculatePaginationChunk();
   }
   ngOnInit() {
     if (!this.limit) this.limit=20;
     if (!this.page) this.page=1;
-    if (!this.maxPage) this.maxPage=5;
+    if (!this.maxPage || typeof this.maxPage == 'undefined') this.maxPage=5;
     if (!this.totalPage) this.totalPage=1;
     this.calculatePaginationChunk();
   }
