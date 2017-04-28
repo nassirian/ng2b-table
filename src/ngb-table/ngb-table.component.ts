@@ -52,7 +52,9 @@ export class NgbTableComponent implements OnInit,OnChanges {
   }
 
   calculatePageNo(){
-    this._totalPage=Math.floor(this.totalItem/this.limit);
+    var fixingNum=this.totalItem%this.limit;
+    if (fixingNum > 0) fixingNum = 1
+    this._totalPage=Math.floor(this.totalItem/this.limit)+fixingNum;
 
   }
 
@@ -63,7 +65,7 @@ export class NgbTableComponent implements OnInit,OnChanges {
   getColVal(col,key){
 
     return key.split('.').reduce(function(o,i){
-      return o[i] ? o[i] : ''
+      return (o[i] || o[i] === 0) ? o[i] : ''
     }, col)
 
 
