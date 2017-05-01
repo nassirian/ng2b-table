@@ -58,7 +58,7 @@ export class NgbCellComponent implements OnInit {
         pipeArgs.unshift(value);
         if (acceptablePipes.indexOf(pipeName) >= 0) {
           if (value == '' && pipeName !='date') value = 0;
-          if ((value == 'NaN' || typeof value == 'NaN') && pipeName !='date') value = 0;
+          if ((value == 'NaN' ||isNaN(value)) && pipeName !='date') value = 0;
           var pipeObj;
           switch (pipeName) {
             case 'currency':
