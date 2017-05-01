@@ -44,21 +44,22 @@ export class NgbCellComponent implements OnInit {
       private pipe=_this.cell.pipe || null;
 
       ngOnInit() {
-        if (this.pipe && (this.value || this.value === 0)) {
+        if (this.pipe) {
           this.value=this.handlePipe(this.pipe,this.value);
         }
       }
 
       handlePipe(pipeString,value){
+        if (value === null || (!value && value !=0)) value='';
         var acceptablePipes=['currency','date','json','decimal','percentage'];
         var pipeArgs=pipeString.split(':');
         var pipeSplit=pipeArgs.splice(0,2);
         var pipeName=pipeSplit[0];
         var pipestr=pipeSplit[1];
-        pipeArgs.unshift(value);
         if (acceptablePipes.indexOf(pipeName) >= 0) {
           if (value == '' && pipeName !='date') value = 0;
-          if ((value == 'NaN' ||isNaN(value)) && pipeName !='date') value = 0;
+          if ((value == 'NaN' || isNaN(value)) && pipeName !='date') value = 0;
+          pipeArgs.unshift(value);
           var pipeObj;
           switch (pipeName) {
             case 'currency':

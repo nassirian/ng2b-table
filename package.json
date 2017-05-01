@@ -1,7 +1,7 @@
 {
   "name": "ng2b-table",
   "description": "Angular2 bootstrap data table with pagination",
-  "version": "0.0.90",
+  "version": "0.0.91",
   "repository": {
     "type": "git",
     "url": "https://github.com/nassirian/ng2b-table"
