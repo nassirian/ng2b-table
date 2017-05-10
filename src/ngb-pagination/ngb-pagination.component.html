@@ -1,5 +1,5 @@
 <div>
-  <ul class="pagination">
+  <ul class="{{paginationClass.mainClass || 'pagination'}}">
     <li class=" pointer-cursor" *ngIf="page > 1">
       <a aria-label="First Page" (click)="changePage(1)">
         <span aria-hidden="true">&laquo;</span>

@@ -1,6 +1,6 @@
 <div class="row" *ngIf="_totalPage > 1">
   <div class="col-sm-12">
-    <ngb-pagination [totalPage]="_totalPage" [limit]="limit"    (updateFilter)="refreshFilter($event)"></ngb-pagination>
+    <ngb-pagination [totalPage]="_totalPage" [limit]="limit"   [paginatoinClass]="paginationClass" (updateFilter)="refreshFilter($event)"></ngb-pagination>
   </div>
 </div>
 <div class="row">

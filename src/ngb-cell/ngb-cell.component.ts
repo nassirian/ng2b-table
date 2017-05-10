@@ -75,7 +75,10 @@ export class NgbCellComponent implements OnInit {
               pipeObj=new DecimalPipe(pipestr);
               break;
             case 'percentage':
-              return parseFloat(value).toFixed(pipestr || 2)+'%';
+              var _value=parseFloat(value);
+              if (typeof _value != 'number' || !_value) _value = 100;
+
+              return _value.toFixed(pipestr || 2)+'%';
           }
           return pipeObj.transform.apply(this,pipeArgs)
         } else {

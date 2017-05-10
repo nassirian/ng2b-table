@@ -9,6 +9,7 @@ import {Component, OnInit, Input, Output, EventEmitter, OnChanges} from '@angula
 export class NgbPaginationComponent implements OnInit , OnChanges {
   @Input() totalPage;
   @Input() maxPage;
+  @Input() paginationClass;
   @Input() limit;
   @Output() updateFilter:EventEmitter<any> = new EventEmitter();
   @Input() page;
