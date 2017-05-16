@@ -1,5 +1,7 @@
 import {Compiler, Component, ElementRef ,OnInit, NgModule, Input, ViewContainerRef, ViewChild, Renderer} from '@angular/core';
 import {CurrencyPipe,DatePipe,DecimalPipe,JsonPipe} from '@angular/common'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 @Component({
   template:'<div #container></div>',
   selector: 'ngb-cell',
@@ -87,7 +89,9 @@ export class NgbCellComponent implements OnInit {
       }
     }
 
-    @NgModule({declarations: [TemplateComponent]})
+    @NgModule({declarations: [TemplateComponent], imports: [
+      CommonModule,FormsModule
+    ],})
     class TemplateModule {
 
     }
