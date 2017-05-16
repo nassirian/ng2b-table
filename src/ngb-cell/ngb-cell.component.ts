@@ -76,7 +76,7 @@ export class NgbCellComponent implements OnInit {
               break;
             case 'percentage':
               var _value=parseFloat(value);
-              if (typeof _value != 'number' || !_value) _value = 100;
+              if (typeof _value != 'number' || !_value) return _value;
 
               return _value.toFixed(pipestr || 2)+'%';
           }
