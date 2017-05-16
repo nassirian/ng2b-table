@@ -11,6 +11,7 @@ export class NgbTableComponent implements OnInit,OnChanges {
   @Input() tableData:Array<any>;
   @Input() totalItem;
   @Input() limit;
+  @Input() loading:boolean;
   @Output() updateFilter:EventEmitter<any> = new EventEmitter();
   @Output() onSort:EventEmitter<any> = new EventEmitter();
   @Output() rowClick:EventEmitter<any> = new EventEmitter();
@@ -48,13 +49,14 @@ export class NgbTableComponent implements OnInit,OnChanges {
 
   ngOnInit() {
     if (!this.limit) this.limit=20;
+    if (!this.loading) this.loading=false;
     if (!this.paginationClass) this.paginationClass={mainClass:'pagination'};
     this.calculatePageNo();
   }
 
   calculatePageNo(){
     var fixingNum=this.totalItem%this.limit;
-    if (fixingNum > 0) fixingNum = 1
+    if (fixingNum > 0) fixingNum = 1;
     this._totalPage=Math.floor(this.totalItem/this.limit)+fixingNum;
 
   }

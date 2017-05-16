@@ -1,0 +1,46 @@
+.mask{
+    display: none; /*This hides the mask*/
+}
+
+.mask.loading{
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute; /*required for z-index*/
+    z-index: 1000; /*puts on top of everything*/
+    background: #e1e1e1;
+    opacity: 0.5;
+
+}
+
+.glyphicon-spin {
+    -webkit-animation: spin 1000ms infinite linear;
+    animation: spin 1000ms infinite linear;
+    font-size: 80px;
+}
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+@keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+
+.loading-spinner {
+    position: relative;
+    top:50%;
+    text-align: center;
+}
