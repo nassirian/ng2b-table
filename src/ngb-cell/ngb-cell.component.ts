@@ -60,7 +60,7 @@ export class NgbCellComponent implements OnInit {
         var pipestr=pipeSplit[1];
         if (acceptablePipes.indexOf(pipeName) >= 0) {
           if (value == '' && pipeName !='date') value = 0;
-          if ((value == 'NaN' || isNaN(value)) && pipeName !='date') value = 0;
+
           pipeArgs.unshift(value);
           var pipeObj;
           switch (pipeName) {
@@ -78,10 +78,14 @@ export class NgbCellComponent implements OnInit {
               break;
             case 'percentage':
               var _value=parseFloat(value);
-              if (typeof _value != 'number' || !_value) return _value;
-
+              if (isNaN(_value)) _value=0;
+              if (typeof _value != 'number' || !_value) {
+                if (value == 'NaN') value= '0%';
+                return value;
+              }
               return _value.toFixed(pipestr || 2)+'%';
           }
+          if ((value == 'NaN' || isNaN(value)) && pipeName !='date') value = 0;
           return pipeObj.transform.apply(this,pipeArgs)
         } else {
           return value;
