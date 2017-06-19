@@ -39,6 +39,7 @@ export class NgbTableComponent implements OnInit,OnChanges {
     } else {
       this.sortOrder=1;
     }
+    this.sortField=$event;
     this.onSort.emit({field:this.sortField,order:this.sortOrder});
   }
 

@@ -13,17 +13,9 @@
     <table class="table table-bordered">
       <thead>
       <tr>
-        <td *ngFor="let header of tableColumns;">
-          <div *ngIf="header.sortable" (click)="_onSort(header.field)">
-            {{header.label}}
-            <span [ngClass]="{'dropup':sortField == header.field && sortOrder == 1}">
-              <span class="caret" [ngClass]="{'disable-caret':sortField != header.field}"></span>
-            </span>
-          </div>
-          <div *ngIf="!header.sortable" >
-            {{header.label}}
-          </div>
-        </td>
+        <th *ngFor="let header of tableColumns;">
+          <ngb-header [headerObj]="header" (onSort)="_onSort($event)" [sortField]="sortField" [sortOrder]="sortOrder"></ngb-header>
+        </th>
       </tr>
       </thead>
       <tbody>
